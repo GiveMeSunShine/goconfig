@@ -24,6 +24,13 @@ import (
 // Write spaces around "=" to look better.
 var PrettyFormat = true
 
+// Set PrettyFormat 
+// If the field "PrettyFormat" is defined, there should be a method to set it
+// ansible-playbook config inventory.ini need "=", No spaces are required
+func SetGlobalPrettyFormat(format bool){
+	PrettyFormat = format
+}
+
 // SaveConfigData writes configuration to a writer
 func SaveConfigData(c *ConfigFile, out io.Writer) (err error) {
 	equalSign := "="
